@@ -20,7 +20,7 @@ mdc: true
 
 # Build with AI.<br>Remember with evidence.
 
-<div class="cover-mark"><img src="/assets/claude-logo.svg" alt="Claude" /></div><p class="hero-sub">Building shared memory with Pensieve.</p><p class="tagline">One feature. A visible OODA loop.<br>Engineering judgment you can defend.</p><p class="event-line">Kennesaw State University · Computer Science</p><img class="ksu-cover" src="/assets/ksu-owls.png" alt="Kennesaw State Owls" />
+<div class="cover-mark"><img src="/assets/claude-logo.svg" alt="Claude" /></div><p class="hero-sub">Building shared memory with Pensieve.</p><p class="tagline">One feature. A visible OODA loop.<br>Engineering judgment you can defend.</p><p class="event-line">Kennesaw State University · Computer Science</p><img class="ksu-cover" src="/assets/ksu-owls.png" alt="Kennesaw State Owls" /><a class="qr-cover" href="https://doctor-ew.github.io/ksu-pensieve-workshop/" target="_blank" rel="noopener"><img src="/assets/qr-slides.png" alt="QR code for these slides" /><p>Scan for the slides<br><small>doctor-ew.github.io/ksu-pensieve-workshop</small></p></a>
 
 <div class="source">KSU Claude event · Drew Schillinger + Tyler Sztuka · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
@@ -36,7 +36,7 @@ class: content
 
 # Your guides
 
-<div class="presenters"><div class="presenter"><img src="/assets/tyler.jpeg" alt="Tyler Sztuka" /><div><h3>Tyler Sztuka</h3><p class="role">Claude Community Ambassador<br>Atlanta</p><p>Building practical experiences with Claude.</p></div></div><div class="presenter"><img src="/assets/drew.jpg" alt="Drew Schillinger" /><div><h3>Drew Schillinger</h3><p class="role">Enterprise Architect<br>@doctorew</p><p>Connecting specifications, agentic workflows, and human judgment.</p></div></div></div>
+<div class="presenters"><div class="presenter"><img src="/assets/tyler.jpeg" alt="Tyler Sztuka" /><div><h3>Tyler Sztuka</h3><p class="role">Claude Community Ambassador<br>Atlanta</p><p>Building practical experiences with Claude.</p><a class="li-qr" href="https://www.linkedin.com/in/tyler-sztuka-283937123/" target="_blank" rel="noopener"><img src="/assets/qr-tyler-linkedin.png" alt="QR code for Tyler Sztuka on LinkedIn" /><span>LinkedIn<br>tyler-sztuka</span></a></div></div><div class="presenter"><img src="/assets/drew.jpg" alt="Drew Schillinger" /><div><h3>Drew Schillinger</h3><p class="role">Enterprise Architect<br>@doctorew</p><p>Connecting specifications, agentic workflows, and human judgment.</p><a class="li-qr" href="https://www.linkedin.com/in/andrew-schillinger/" target="_blank" rel="noopener"><img src="/assets/qr-drew-linkedin.png" alt="QR code for Drew Schillinger on LinkedIn" /><span>LinkedIn<br>andrew-schillinger</span></a></div></div></div>
 
 <div class="source">Presenter confirmation: TALK-BRIEF.md · portrait provenance: ASSETS.md · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
@@ -1151,4 +1151,20 @@ class: content
 
 <!--
 Show source packet before closing. Instructor guide is not bundled publicly. No public deployment is implied by a local build. Use the exported PDF for offline presentation, and distribute Markdown handouts separately if links cannot resolve.
+-->
+
+---
+class: content
+---
+
+<div class="slide-number">KENNESAW STATE UNIVERSITY · 64</div>
+
+# Take it with you.<br>Stay in touch.
+
+<div class="qr-row"><figure><a href="https://doctor-ew.github.io/ksu-pensieve-workshop/" target="_blank" rel="noopener"><img src="/assets/qr-slides.png" alt="QR code for these slides" /></a><h3>These slides</h3><p>doctor-ew.github.io/ksu-pensieve-workshop</p></figure><figure><a href="https://pensieve.doctorew.com" target="_blank" rel="noopener"><img src="/assets/qr-pensieve.png" alt="QR code for Pensieve" /></a><h3>Pensieve</h3><p>pensieve.doctorew.com</p></figure><figure><a href="https://github.com/doctor-ew/nightshift-community" target="_blank" rel="noopener"><img src="/assets/qr-nightshift.png" alt="QR code for Nightshift" /></a><h3>Nightshift</h3><p>github.com/doctor-ew/nightshift-community</p></figure><figure><a href="https://www.linkedin.com/in/tyler-sztuka-283937123/" target="_blank" rel="noopener"><img src="/assets/qr-tyler-linkedin.png" alt="QR code for Tyler Sztuka on LinkedIn" /></a><h3>Tyler</h3><p>linkedin.com/in/tyler-sztuka-283937123</p></figure><figure><a href="https://www.linkedin.com/in/andrew-schillinger/" target="_blank" rel="noopener"><img src="/assets/qr-drew-linkedin.png" alt="QR code for Drew Schillinger on LinkedIn" /></a><h3>Drew</h3><p>linkedin.com/in/andrew-schillinger</p></figure></div>
+
+<div class="source">QR codes generated locally; each decodes to the URL printed below it · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+
+<!--
+Pause here for scanning. Left to right: these slides, the Pensieve app, the Nightshift repository, Tyler's LinkedIn, Drew's LinkedIn. Each code encodes the printed URL directly, with no tracking redirect, and was decoded after generation to confirm it. Pensieve is the production app named in its README; no access or uptime guarantee is implied. The LinkedIn addresses were supplied by the presenters. Tyler's profile could not be checked automatically because LinkedIn blocks automated requests, so confirm it opens before the talk.
 -->
