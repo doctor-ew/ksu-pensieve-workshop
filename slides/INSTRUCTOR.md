@@ -49,9 +49,9 @@ For linear presentation, cover 15–28 in order. Avoid repeatedly jumping forwar
 
 Slides 31–36, 39, 42, 45–47, 49, 51, and 62 come from the GSU archived deck (see
 sources/SOURCES.md for the commit and line numbers). Slides 31–36, 42, 46, 47, 51, and 62
-are close ports. Slides 39 and 49 were rewritten around the handoff verifier. Slide 45
+are close ports. Slides 39 and 49 were rewritten around the prior-art check. Slide 45
 keeps the original table because it shows a real audit finding; its columns are the
-GSU coaching prompt's four requirements, not the verifier's. The reviewer error on slide 46
+GSU coaching prompt's four requirements, not the check's. The reviewer error on slide 46
 and the 8 / 8 result on slide 31 are real findings from the Nightshift retained audit.
 
 ## Nightshift build-harness slides
@@ -77,10 +77,10 @@ released.
 
 ## Demonstration
 
-Slide 40 is a local Vue fixture. It has four scenarios and a toggle between an
-intentionally incomplete save-only claim and the repaired expected contract.
-It does not contact Pensieve, authenticate users, alter membership, or establish
-production correctness. Its source is components/HandoffCheck.vue:1.
+Slide 40 is a local Vue fixture. It has five scenarios and a toggle between an
+intentionally incomplete “no prior work found” claim and the repaired expected contract.
+It does not contact Pensieve, read real memories, or establish production correctness.
+Its source is components/PriorArtCheck.vue:1.
 Slide 41 provides the static explanation for the exported PDF.
 
 An actual Claude Code build is optional and needs rehearsal in a separate demo
@@ -94,7 +94,7 @@ label this as a walkthrough, not a recorded successful product build.
 
 - Return to Observe → Orient → Decide → Act after each failure.
 - Exact-ID verification and semantic discoverability are different questions.
-- Do not collapse writer success into intended-recipient access.
+- Do not collapse “nothing found” into “no prior work exists,” or a saved memory into a recalled one.
 - DRY is about knowledge; SOLID should change a concrete design decision.
 - Explain the AWS transaction boundary, not the older SQLite implementation.
 - Do not invent vector-service complexity, latency, or durability measurements.

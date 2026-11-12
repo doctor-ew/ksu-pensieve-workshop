@@ -11,10 +11,10 @@ the deck. References support specific claims, not blanket product correctness.
 - DRY, slide 17: https://media.pragprog.com/titles/tpp20/dry.pdf
   Knowledge duplication is the concern; not every repeated text is the same rule.
 - SOLID, slide 18: https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html
-  Slide 18 shows the existing AWS vector interface; the recipient verifier remains proposed.
+  Slide 18 shows the existing AWS vector interface; the prior-art check remains proposed.
 - ACID, slide 19: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transactions.html
   Database transaction guarantees do not create a distributed transaction over
-  indexing, account setup, and the recipient's subsequent read.
+  indexing and a later search that finds the memory.
 
 ## Implementation inspected
 
@@ -32,8 +32,12 @@ See [captured excerpts](AWS-SOURCE-EXCERPTS.md) for original line numbers and ha
 
 The deck makes no claim that these production tests were executed during slide
 authoring. Source inspection is not verification of the deployed source revision.
-The new recipient-verification receipt is a proposed feature, not an existing
-production promise. components/HandoffCheck.vue is a synthetic local illustration.
+The prior-art check (search shared memory for what other teams already decided or
+built, and report matches with source, author, date and gaps) is a proposed feature, not
+an existing production promise. components/PriorArtCheck.vue is a synthetic local
+illustration. Existing source it builds on: src/aws-team-store.ts:16 (memory rows carry
+contributor and creation time) and :139 (search). A superseded status does not exist
+in that source and is proposed.
 
 ## Big O scope
 
@@ -49,9 +53,12 @@ its N×D plus full-sort analysis is deliberately NOT presented as the AWS path.
 
 ## Historical case and visual reuse
 
-- Historical incident: GSU Hack-Her-Thon/docs/PENSIEVE-SLIDE-HANDOFF.md:3.
-  Wrong service, then separate recipient membership. The recorded repair is not
-  proof that a second laptop was operated. Private account identifiers are omitted.
+- Slide 5 is the presenter's own account (too many Confluence pages across teams and
+  time zones, duplicated work, and coding agents that each start with no context). It is
+  not a measured study and has no source document. An earlier version cited a GSU file,
+  docs/PENSIEVE-SLIDE-HANDOFF.md, as a historical incident; that file could not be found
+  and the incident was not real, so the citation and claim were removed on 2026-11-12.
+  The cases in the prior-art demo are synthetic.
 - GSU slides/slides.md:125: reusable teaching sequence, not historical transcript.
 - GSU slides/ASSETS.md:6: code photograph provenance; portraits and fonts retained.
 - KSU marks: supplied by Drew in this conversation; used unchanged.
@@ -119,12 +126,12 @@ slides/archive/deck-before-coach-walkthrough.md. Slide footers cite its line num
 | 34 Citation presence ≠ claim support | 293 | Ported unchanged |
 | 35 Exercise · audit the claim | 310 | Ported unchanged |
 | 36 Adversarial means skeptical | 327 | Ported unchanged |
-| 39 Make the behavior observable | 360 | Quoted input rewritten for the verifier |
+| 39 Make the behavior observable | 360 | Quoted input rewritten for the prior-art check |
 | 42 Repair the smallest thing | 446 | Ported unchanged |
 | 45 Every response can violate more than one requirement | 378 | Ported unchanged; columns are the GSU coach's requirements |
 | 46 A quote must belong to the case it cites | 412 | Ported unchanged |
 | 47 Completed execution ≠ verified requirements | 429 | Ported unchanged |
-| 49 Exercise · try to break it | 395 | Four inputs rewritten for the verifier |
+| 49 Exercise · try to break it | 395 | Four inputs rewritten for the prior-art check |
 | 51 Exercise · show one trace | 496 | Ported unchanged |
 | 62 Works cited | 531 | New list built from this file's own references |
 
@@ -138,7 +145,7 @@ Slide 31's excerpt is an adapted teaching excerpt, not a verbatim transcript.
 Synthetic material, not real data: handouts/SOURCE-PACKET.md (organizer counts and the
 .test URL), the slide 39 and 49 inputs, and the slide 45 check marks. Handouts
 CLAIM-LEDGER.md, SOURCE-PACKET.md, and EVIDENCE-REVIEW.md are copied from the GSU
-slides/handouts/ directory. PROMPTS.md is adapted for the handoff verifier.
+slides/handouts/ directory. PROMPTS.md is adapted for the prior-art check.
 
 Works cited slide (62): the eight links were requested on 2026-11-11 and each returned
 HTTP 200. That confirms the pages exist; the pages were not re-read for this slide.

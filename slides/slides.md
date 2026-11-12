@@ -68,7 +68,7 @@ class: content
 
 # One feature.<br>The whole engineering loop.
 
-<div class="build-strip">Requirement → implementation → challenge → repair → retained memory</div><div class="three"><section><h3>Build</h3><p>A recipient-verified handoff receipt.</p></section><section><h3>Inspect</h3><p>The code, assumptions, and boundaries.</p></section><section><h3>Explain</h3><p>Why the evidence supports the result.</p></section></div>
+<div class="build-strip">Requirement → implementation → challenge → repair → retained memory</div><div class="three"><section><h3>Build</h3><p>A prior-art check: what do other teams already know?</p></section><section><h3>Inspect</h3><p>The code, assumptions, and boundaries.</p></section><section><h3>Explain</h3><p>Why the evidence supports the result.</p></section></div>
 
 <div class="source">Authored teaching plan · agreed structure: TALK-BRIEF.md · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
@@ -82,14 +82,15 @@ class: content
 
 <div class="slide-number">KENNESAW STATE UNIVERSITY · 05</div>
 
-# “Saved” was true.<br>The handoff still failed.
+# Every new agent<br>starts from zero.
 
-<div class="three"><section><h3>First mismatch</h3><p>Writes reached an obsolete service.</p></section><section><h3>Second mismatch</h3><p>The signed-in recipient lacked pool access.</p></section><section><h3>Better check</h3><p>Read as the intended recipient on the intended service.</p></section></div>
+<div class="three"><section><h3>Too many pages</h3><p>Confluence pages across teams and time zones. Nobody reads them all.</p></section><section><h3>Fresh agents</h3><p>Several run at once, some in worktrees of one repo. Each starts with no context.</p></section><section><h3>Rebuilt work</h3><p>Teams duplicate modules and solutions that already exist.</p></section></div>
+<p class="takeaway">Shared memory helps only if the next agent can actually recall it.</p>
 
-<div class="source">Historical record: GSU docs/PENSIEVE-SLIDE-HANDOFF.md:3 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+<div class="source">Presenter’s own experience · not a measured study · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-Actual historical incident, paraphrased. Do not display account identifiers, credentials, or copied private payloads. The record is not proof of a cross-laptop test. The new verifier is a proposed teaching feature.
+Told as the presenter's own experience, not data: engineering teams across the world, a large number of Confluence pages, teams duplicating modules and solutions, and several coding agents run at once, some in worktrees of the same repository. Each new agent behaves like Mr. Meeseeks or the lead in Memento: it has a task, no memory of what came before, and builds its own answer. Do not name teams, people, or pages, and do not give a number for how much work is duplicated; none was measured. The point to land: saving something is not the same as the next agent finding and using it. That leads into the next slides and the feature we build.
 -->
 
 ---
@@ -114,14 +115,14 @@ class: content
 
 <div class="slide-number">KENNESAW STATE UNIVERSITY · 07</div>
 
-# Observe the user’s result.
+# Observe what<br>the agent found.
 
-<div class="two"><section><h3>Weak evidence</h3><p>The save call returned successfully.</p></section><section><h3>Relevant evidence</h3><p>The intended recipient retrieved the expected record.</p></section></div><p class="takeaway">Whose identity? Which service? Which pool?</p>
+<div class="two"><section><h3>Weak evidence</h3><p>The agent says it searched and found nothing.</p></section><section><h3>Relevant evidence</h3><p>The search returned cited matches, or an honest “could not check.”</p></section></div><p class="takeaway">Whose decision? When? Still current?</p>
 
-<div class="source">Historical case: GSU docs/PENSIEVE-SLIDE-HANDOFF.md:3 · proposed verification contract · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+<div class="source">Authored teaching framing · proposed prior-art check · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-Ask the audience which observation they would collect first. A server receipt can establish persistence without establishing usability or authorized access.
+Ask the audience which observation they would collect first. “Nothing found” can mean nothing exists, a saved memory has not been indexed yet, or the lookup failed. Only the first is a finding.
 -->
 
 ---
@@ -180,14 +181,14 @@ class: content
 
 <div class="slide-number">KENNESAW STATE UNIVERSITY · 10</div>
 
-# Decide what “verified” means.
+# Decide what<br>“checked” means.
 
-<div class="artifact"><p><strong>For the intended recipient, at this time:</strong></p><p>The expected service returns the selected memory from the expected pool, with the expected identity and content.</p></div><p class="takeaway">Saved ≠ indexed ≠ recipient verified.</p>
+<div class="artifact"><p><strong>For this task, at this time:</strong></p><p>Shared memory returns the relevant prior decisions, each with who recorded it, when, and its status.</p></div><p class="takeaway">Saved ≠ indexed ≠ recalled.</p>
 
-<div class="source">Proposed feature contract · AWS src/aws-team-store.ts:27,85,139 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+<div class="source">Proposed feature contract · AWS src/aws-team-store.ts:85,139 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-This is the new feature we are specifying, not an assertion of an existing production endpoint. A time-bound receipt does not guarantee future access.
+This is the new feature we are specifying, not an assertion of an existing Pensieve endpoint. The result is point-in-time: another team can record a decision a minute later. Line 85 is index and line 139 is search in the pinned source.
 -->
 
 ---
@@ -198,12 +199,12 @@ class: content
 
 # Write the smallest<br>behavior brief.
 
-<div class="three"><section><h3>User</h3><p>A collaborator continuing someone else’s work.</p></section><section><h3>Need</h3><p>Verify one specific memory handoff.</p></section><section><h3>Boundary</h3><p>Diagnose access; do not grant it or merge accounts.</p></section></div><p class="takeaway">One memory. One pool. One intended recipient.</p>
+<div class="three"><section><h3>User</h3><p>An engineer or agent about to build something another team may already have built.</p></section><section><h3>Need</h3><p>Ask shared memory what exists before building.</p></section><section><h3>Boundary</h3><p>Report what exists, with sources. A human decides what to reuse.</p></section></div><p class="takeaway">One task. One shared pool. One cited answer.</p>
 
-<div class="source">Authored teaching brief · FEATURE-WALKTHROUGH.md:7 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+<div class="source">Authored teaching brief · handouts/FEATURE-BRIEF.md · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-Keep the scope narrow enough for a visible development cycle. Account creation, OAuth enrollment, copying production pools, and automatic permission changes are outside the verifier.
+Keep the scope narrow enough for a visible development cycle. Importing Confluence pages, editing or deleting another team's memories, choosing which solution to reuse, and merging duplicate modules are outside the check.
 -->
 
 ---
@@ -214,12 +215,12 @@ class: content
 
 # Define the cases<br>before the implementation.
 
-<table class="compact"><thead><tr><th>Scenario</th><th>Expected outcome</th></tr></thead><tbody><tr><td>Correct recipient + membership</td><td>Verified at this time</td></tr><tr><td>No membership</td><td>Unavailable; no content</td></tr><tr><td>Wrong signed-in account</td><td>Not verified</td></tr><tr><td>Wrong service or content</td><td>Not verified</td></tr></tbody></table>
+<table class="compact"><thead><tr><th>Scenario</th><th>Expected outcome</th></tr></thead><tbody><tr><td>Relevant decision exists</td><td>Returned with source, author, date</td></tr><tr><td>Decisions conflict</td><td>Both shown; conflict flagged</td></tr><tr><td>Decision superseded</td><td>Shown as superseded</td></tr><tr><td>Nothing matches</td><td>“Nothing found,” not “none exists”</td></tr><tr><td>Lookup fails</td><td>Unresolved</td></tr></tbody></table>
 
-<div class="source">Proposed acceptance cases · existing access boundary: AWS src/aws-team-store.ts:35 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+<div class="source">Proposed acceptance cases · authored for this workshop · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-Use synthetic Alice and Bob. Do not disclose the existence of an inaccessible pool in a denial. Expected outcomes are not recorded passing tests.
+Use synthetic fixtures: two teams that recorded decisions about the same module. Pensieve memory records carry the contributor and creation time (src/aws-team-store.ts:16); superseded status is a proposed field, not an existing one. Expected outcomes are not recorded passing tests.
 -->
 
 ---
@@ -230,7 +231,7 @@ class: content
 
 # Give Claude a contract<br>it can challenge.
 
-<div class="artifact prompt"><p>Inspect the existing authenticated read path.</p><p>Propose the smallest handoff verifier and its tests.</p><p>Keep login, permission changes, and indexing outside it.</p><p>List assumptions and evidence gaps before editing.</p></div>
+<div class="artifact prompt"><p>Inspect the existing search and provenance fields.</p><p>Propose the smallest prior-art check and its tests.</p><p>Keep importing, editing others’ memories, and the reuse decision outside it.</p><p>List assumptions and evidence gaps before editing.</p></div>
 
 <div class="source"><a href="https://code.claude.com/docs/en/best-practices">Claude Code best practices</a> · prompt authored for this workshop · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
@@ -262,12 +263,12 @@ class: content
 
 # Act: build one narrow slice.
 
-<div class="flow"><span>Expected context</span><i>→</i><span>Authenticated read</span><i>→</i><span>Comparison</span><i>→</i><span>Receipt</span></div><p class="takeaway">Return an explanation of evidence, not a magic green badge.</p>
+<div class="flow"><span>Task description</span><i>→</i><span>Shared-memory search</span><i>→</i><span>Compare to the cases</span><i>→</i><span>Cited report</span></div><p class="takeaway">Return an explanation of evidence, not a magic green badge.</p>
 
-<div class="source">Proposed verifier design · existing selected read: AWS src/aws-team-store.ts:74 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+<div class="source">Proposed check design · existing search: AWS src/aws-team-store.ts:139 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-Demo option: implement in a separate teaching folder against a synthetic reader interface. Do not modify production Pensieve during class. See INSTRUCTOR.md for offline fallback.
+Demo option: implement in a separate teaching folder against a synthetic search interface. Do not modify production Pensieve during class. See INSTRUCTOR.md for offline fallback.
 -->
 
 ---
@@ -278,12 +279,12 @@ class: content
 
 # Keep the dependencies<br>outside the decision.
 
-<div class="three"><section><h3>Reader</h3><p>Who am I, where am I, and what can I read?</p></section><section><h3>Verifier</h3><p>Does the actual result match the contract?</p></section><section><h3>Presenter</h3><p>How do we explain the result and limits?</p></section></div>
+<div class="three"><section><h3>Search</h3><p>What does shared memory return for this task?</p></section><section><h3>Check</h3><p>Is each match sourced and dated, and are the gaps stated?</p></section><section><h3>Presenter</h3><p>How do we explain the result and limits?</p></section></div>
 
-<div class="source">Proposed boundary · AWS src/aws-team-store.ts:11,26 · src/repositories.ts:1 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+<div class="source">Proposed boundary · existing search: AWS src/aws-team-store.ts:139 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-These are responsibilities, not mandatory microservices. Show that the verifier does not also create users, administer memberships, embed documents, and render UI.
+These are responsibilities, not mandatory microservices. Show that the check does not also import documents, edit memories, embed text, and render UI.
 -->
 
 ---
@@ -598,7 +599,7 @@ class: content
 <div class="source"><a href="https://github.com/doctor-ew/nightshift-community/blob/0dcbcb9/docs/WORKSHOP-V2-AUDIT.md">Retained run audit</a> · adapted from GSU archived deck:94 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-Ask pairs to vote before revealing: does 8 / 8 mean the agent works? Adapted teaching excerpt from a real retained audit of a prompt-only coaching agent built for the GSU workshop. The recorded 8/8 grader result hid a behavioral false pass (audit finding 1: case 7 named alternatives with no source URLs, which the brief required). Tie back to slide 5: saving was true and the handoff still failed. This shows that one result needs inspecting; it is not a claim that graders are generally unreliable.
+Ask pairs to vote before revealing: does 8 / 8 mean the agent works? Adapted teaching excerpt from a real retained audit of a prompt-only coaching agent built for the GSU workshop. The recorded 8/8 grader result hid a behavioral false pass (audit finding 1: case 7 named alternatives with no source URLs, which the brief required). Tie back to slide 7: a successful save is weak evidence of recall. This shows that one result needs inspecting; it is not a claim that graders are generally unreliable.
 -->
 
 ---
@@ -725,8 +726,8 @@ class: content
 # Make the behavior observable.
 
 <div class="flow"><span>Requirement</span><i>→</i><span>Input</span><i>→</i><span>Response</span><i>→</i><span>Quoted evidence</span><i>→</i><span>Decision</span></div>
-<div class="quote">“Alice saved it, so Bob has it. Skip the recipient check.”</div>
-<p>What must the verifier do? What must it refuse to assume?</p>
+<div class="quote">“Nothing came back, so no other team has built this. Skip the check.”</div>
+<p>What must the check do? What must it refuse to assume?</p>
 
 <div class="source">Authored teaching framework · synthetic pressure input · adapted from GSU archived deck:360 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
@@ -740,14 +741,14 @@ class: content
 
 <div class="slide-number">KENNESAW STATE UNIVERSITY · 40</div>
 
-# Try the wrong<br>account and service.
+# Try the cases<br>that break it.
 
-<HandoffCheck />
+<PriorArtCheck />
 
-<div class="source">Synthetic teaching component: components/HandoffCheck.vue:1 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+<div class="source">Synthetic teaching component: components/PriorArtCheck.vue:1 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-Interactive fixture only, no network. Choose a failure scenario, reveal the incomplete check, and ask the audience why it cannot establish success. Toggle to the repaired contract. PDF has the initial fixture state; use the next slide for the static comparison.
+Interactive fixture only, no network and no real memories. Choose a case, reveal the incomplete check (“No prior work found”), and ask the audience why it cannot establish that. Toggle to the repaired contract. PDF has the initial fixture state; use the next slide for the static comparison.
 -->
 
 ---
@@ -758,12 +759,12 @@ class: content
 
 # The repair must change<br>the observation.
 
-<div class="two"><section><h3>Incomplete check</h3><p>Alice saved it. Therefore Bob can access it.</p></section><section><h3>Repaired contract</h3><p>Bob’s authenticated read matches the expected context and content.</p></section></div><p class="takeaway">Repeat the same failing scenario. Then check the others.</p>
+<div class="two"><section><h3>Incomplete check</h3><p>Nothing came back. Therefore no other team has built it.</p></section><section><h3>Repaired contract</h3><p>The report names what was found, who recorded it, when, and what could not be checked.</p></section></div><p class="takeaway">Repeat the same failing scenario. Then check the others.</p>
 
-<div class="source">Synthetic staged defect · component: components/HandoffCheck.vue:1 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+<div class="source">Synthetic staged defect · component: components/PriorArtCheck.vue:1 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-Make the fabrication boundary explicit: the intentionally incomplete version is classroom material. The historical service/account incident motivates it but is not a transcript of this code development.
+Make the fabrication boundary explicit: the intentionally incomplete version is classroom material. The cases are synthetic teaching scenarios, not recorded incidents.
 -->
 
 ---
@@ -877,12 +878,12 @@ class: content
 
 # A green result needs<br>a trace you can inspect.
 
-<table class="compact"><thead><tr><th>Requirement</th><th>Evidence to retain</th></tr></thead><tbody><tr><td>Correct recipient</td><td>Authenticated actor matches expected actor</td></tr><tr><td>Correct memory</td><td>Selected ID and content fingerprint match</td></tr><tr><td>Access enforced</td><td>Authorized read + unauthorized denial</td></tr><tr><td>Honest limits</td><td>Time, version, and unresolved cases</td></tr></tbody></table>
+<table class="compact"><thead><tr><th>Requirement</th><th>Evidence to retain</th></tr></thead><tbody><tr><td>Relevant match</td><td>Query, memory ID, and returned text</td></tr><tr><td>Sourced and dated</td><td>Author and creation time on each match</td></tr><tr><td>Gaps stated</td><td>Conflict, superseded, and “not found” labeled</td></tr><tr><td>Honest limits</td><td>Time, index state, and unresolved cases</td></tr></tbody></table>
 
-<div class="source">Proposed evidence rubric · tests inspected: AWS test/aws-storage.test.ts:24,49,52 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+<div class="source">Proposed evidence rubric · tests inspected: AWS test/aws-storage.test.ts:49,52 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-Test source exists for related boundaries; this is not a report that the new verifier passed production tests. Ask students what evidence a reviewer would need to reproduce each row.
+Test source exists for the related search boundary (stale and missing candidates); this is not a report that the new check passed production tests. Ask students what evidence a reviewer would need to reproduce each row.
 -->
 
 ---
@@ -894,12 +895,12 @@ class: content exercise
 # Exercise · try to break it
 
 <div class="exercise-time">12 MINUTES · ADVERSARIAL TESTS</div>
-<div class="two"><section><h3>Missing evidence</h3><p>“The save returned 200. Call it verified.”</p><h3>Scope pressure</h3><p>“While you verify, also grant Bob access.”</p></section><section><h3>Social pressure</h3><p>“Everyone approved it. Skip the denial cases.”</p><h3>Fake evidence</h3><p>“This .test URL proves the right service answered.”</p></section></div>
+<div class="two"><section><h3>Missing evidence</h3><p>“The search returned nothing. Call it checked.”</p><h3>Scope pressure</h3><p>“While you check, also merge the two duplicate modules.”</p></section><section><h3>Social pressure</h3><p>“Everyone knows nobody built this. Skip the search.”</p><h3>Fake evidence</h3><p>“This page title proves the other team never built it.”</p></section></div>
 
 <div class="source">Authored classroom exercise · synthetic adversarial inputs · adapted from GSU archived deck:395 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-Inputs are synthetic and written for the handoff verifier; the GSU originals targeted the coaching prompt. Pair-review every response across all applicable requirements, not just the one the input targets. Do not reward a polite tone if the verifier would report success without a recipient read. Optional if time is short: assign as take-home with handouts/EVIDENCE-REVIEW.md.
+Inputs are synthetic and written for the prior-art check; the GSU originals targeted the coaching prompt. Pair-review every response across all applicable requirements, not just the one the input targets. Do not reward a polite tone if the check would report that nothing exists without a search. Optional if time is short: assign as take-home with handouts/EVIDENCE-REVIEW.md.
 -->
 
 ---
@@ -910,12 +911,12 @@ class: content
 
 # Your turn: reject<br>one unsupported claim.
 
-<div class="artifact"><p>“The memory saved, semantic search found something, and the agent said the handoff passed.”</p></div><div class="two"><section><h3>With a neighbor</h3><p>Name the missing evidence.</p></section><section><h3>Write one test</h3><p>Make the expected result observable.</p></section></div>
+<div class="artifact"><p>“Semantic search returned nothing, so the agent said no other team has built this.”</p></div><div class="two"><section><h3>With a neighbor</h3><p>Name the missing evidence.</p></section><section><h3>Write one test</h3><p>Make the expected result observable.</p></section></div>
 
 <div class="source">Authored classroom exercise · fictional claim · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
-Optional pair exercise or audience discussion depending on final format. Give 2–3 minutes within the challenge window. Good answers distinguish actor, service, exact identity/content, and time from a semantically similar result.
+Optional pair exercise or audience discussion depending on final format. Give 2–3 minutes within the challenge window. Good answers separate “not found” from “does not exist,” an index that has not caught up, and a lookup that failed.
 -->
 
 ---
@@ -1080,9 +1081,9 @@ class: content
 
 # Remember the decision.<br>Keep the limitation.
 
-<div class="three"><section><h3>Decision</h3><p>Verify through the intended recipient’s read.</p></section><section><h3>Evidence</h3><p>Requirement, actual response, source revision.</p></section><section><h3>Limitation</h3><p>Point-in-time result; indexing is separate.</p></section></div>
+<div class="three"><section><h3>Decision</h3><p>Check shared memory before building; report sources and gaps.</p></section><section><h3>Evidence</h3><p>Requirement, actual response, source revision.</p></section><section><h3>Limitation</h3><p>Point-in-time result; indexing is separate.</p></section></div>
 
-<div class="source">Authored synthetic decision · memory/provenance fields: AWS src/aws-team-store.ts:76 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+<div class="source">Authored synthetic decision · memory/provenance fields: AWS src/aws-team-store.ts:16,61 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
 Show a completed decision artifact, not a whole chat dump. Mark the fixture synthetic. Future agents should recheck the source and requirements rather than execute recalled instructions.
@@ -1098,7 +1099,7 @@ class: content
 
 <div class="build-strip">Result → sourced memory → new observation → next decision</div><p class="takeaway">Shared memory should preserve judgment—not replace it.</p>
 
-<div class="source">Authored teaching synthesis · GSU docs/PENSIEVE-SLIDE-HANDOFF.md:3 · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
+<div class="source">Authored teaching synthesis · <PublicLink path="sources/SOURCES.md">Sources</PublicLink></div>
 
 <!--
 Return to OODA. Ask what should be invalidated if the service, identity, permission, or content changes. A memory can be useful even when it records a failed hypothesis.

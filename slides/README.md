@@ -3,7 +3,7 @@
 Kennesaw State University Claude event; approximately 90 minutes.
 Presenters: Drew Schillinger and Tyler Sztuka.
 
-The 63-slide deck follows a proposed recipient-verified memory handoff feature
+The 63-slide deck follows a proposed prior-art check, a feature that searches shared memory for what other teams already decided or built,
 through OODA, specification, implementation boundaries, a trust and works-cited
 block, adversarial review, repair, and retained evidence. Slides 31–36, 39, 42, 45–47, 49, 51, and 62
 were ported from the GSU deck, and slides 29, 30, 38, 43, 44, and 52 were adapted from the

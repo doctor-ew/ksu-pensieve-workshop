@@ -1,13 +1,13 @@
 # Workshop prompt examples
 These are example instructions for students, not guarantees of model compliance.
-Adapted for the KSU handoff-verifier feature from the GSU workshop prompt handout.
+Adapted for the KSU prior-art-check feature from the GSU workshop prompt handout.
 
 ## Spec-first request
 Read the feature brief. Restate the acceptance cases and exclusions. Identify ambiguities.
 Propose tests. Wait for my review before implementation.
 
 ## Builder
-Implement only the approved verifier spec, against a synthetic authenticated-reader fixture.
+Implement only the approved prior-art-check spec, against a synthetic shared-memory fixture.
 Do not fabricate sources, test results, or account access. Save the artifact so I can inspect it.
 
 ## Adversarial reviewer

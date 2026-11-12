@@ -35,7 +35,7 @@
 ## Outputs
 
 - Source: slides.md; section rail: global-top.vue.
-- Local fixture: components/HandoffCheck.vue.
+- Local fixture: components/PriorArtCheck.vue (renamed from HandoffCheck.vue on 2026-11-12).
 - Static site: dist/ (speaker notes excluded).
 - PDF: ksu-pensieve.pdf.
 - Local authoring preview: http://localhost:3031/ while the server remains running.
@@ -195,3 +195,39 @@ remote, no push. Claude Code 2.1.322, claude-only policy, subscription auth, son
   exported as PNG and each viewed, no clipping.
 - Not done: no completed end-to-end Nightshift run and no timed rehearsal. The section above
   titled "command test" uses slide numbers from before this change.
+
+## Slide 5 story replaced — 2026-11-12
+
+- Slide 5 previously presented a GSU "historical incident" (writes to an obsolete service,
+  then a recipient without pool access) citing docs/PENSIEVE-SLIDE-HANDOFF.md:3. The
+  presenter confirmed the incident did not happen as described and the file could not be
+  found, so the slide, the citations on slides 7 and 60, two speaker notes, and the
+  SOURCES.md entry were corrected. The wrong-service and wrong-account demo cases are
+  labeled synthetic.
+- New slide 5, "Every new agent starts from zero", is the presenter's own account: many
+  Confluence pages across teams and time zones, duplicated work, and several agents at
+  once with no context. It cites no document and states it is not a measured study.
+- Passed: production build; slide 5 exported as PNG and viewed. Slide 7 re-exported, not
+  viewed. Slide numbers are unchanged (63 slides).
+- Not done: the handoff verifier is still framed around a "recipient"
+  and a saving and recalling agent, not worktrees; the presenter has not reviewed that framing.
+
+## Feature reframed to a prior-art check — 2026-11-12
+
+- The deck's one feature was a recipient-verified memory handoff, which centered login and
+  access. The presenter's real problem is shared knowledge between teams: many Confluence
+  pages, duplicated modules and solutions, and agents that start with no context. The
+  feature is now a proposed prior-art check: search shared memory for what other teams
+  already decided or built, and return a cited report that states conflicts, superseded
+  decisions, "nothing found" and unresolved lookups.
+- Rewritten: slides 4, 7, 10–13, 15, 16, 39–41, 48–50 and the "Decision" column of slide 59;
+  components/PriorArtCheck.vue (five synthetic cases); handouts FEATURE-BRIEF.md,
+  REVIEW-CARD.md and PROMPTS.md; INSTRUCTOR.md, README.md and SOURCES.md. Slide numbers
+  are unchanged (63 slides).
+- Cited source lines were read at the pinned Pensieve commit: aws-team-store.ts:16 (memory
+  rows carry contributorName and createdAt), :85 (index), :139 (search), :61 (provenance).
+  A superseded status is not in that source; the slides and brief label it proposed.
+- Not changed: slides 17–28 (DRY, SOLID, ACID, Big O, CoC) still use real Pensieve code
+  examples about reader permissions, actor reactivation and the vector adapter. The
+  presenter has not reviewed them against the new framing.
+- Not done: the rewritten slides were not all viewed rendered; no rehearsal.
